@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(185, 41%, 84%);
+    min-height: 100vh;
+    font-family: 'Space Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 920px;
+}
+
+header {
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+header img {
+    width: 75px;
+}
+
+main {
+    background-color: white;
+    border-radius: 25px 25px 25px 25px;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    box-shadow: 0 25px 50px hsla(0, 0%, 0%, 0.1);
+}
+
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 14px;
+    color: hsl(186, 14%, 43%);
+    font-weight: 700;
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon img {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 11px;
+    height: 17px;
+    z-index: 2;
+}
+
+input[type="number"] {
+    width: 100%;
+    height: 56px;
+    padding: 0 20px 0 52px;
+    background-color: hsl(189, 47%, 97%);
+    border: 2px solid hsl(189, 47%, 97%);
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: 700;
+    color: hsl(183, 100%, 15%);
+    text-align: right;
+    font-family: 'Space Mono', monospace;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: hsl(172, 67%, 45%);
+    background-color: white;
+}
+
+.btn-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.btn-tip {
+    height: 56px;
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Space Mono', monospace;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-tip:hover {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+.btn-tip.active {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+.right {
+    background: hsl(183, 100%, 15%);
+    border-radius: 15px;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.right::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, 
+        rgba(255,255,255,0.1) 0%, 
+        transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.results-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    z-index: 2;
+}
+
+.tip-amount, .total-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.tip-amount h4, .total-amount h4 {
+    font-size: 16px;
+    color: white;
+    margin: 0 0 4px 0;
+    font-weight: 700;
+}
+
+.tip-amount p, .total-amount p {
+    font-size: 13px;
+    color: hsla(0, 0%, 100%, 0.6);
+    margin: 0;
+}
+
+.amount {
+    font-size: 48px;
+    font-weight: 700;
+    color: hsl(172, 67%, 45%);
+    text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-reset {
+    height: 56px;
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    border: 2px solid hsl(172, 67%, 45%);
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    margin-top: auto; 
+    align-self: stretch;
+    
+}
+
+.btn-reset:hover {
+    background-color: hsla(172, 67%, 45%, 0.4);
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 24px;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .amount {
+        font-size: 40px;
+    }
+}
+
+
+#custom {
+    padding: 5px;
+    font-size: 24px;
+}

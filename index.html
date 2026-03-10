@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Gorjeta</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="assets/logo.svg" alt="">
+        </header>
+        <main>
+            <div class="left">
+                <section class="top-section">
+                    <label>Bill</label>
+                    <div class="input-icon">
+                        <img src="assets/icon-dollar.svg" alt="" class="bill">
+                        <input type="number" id="bill" name="bill" placeholder="0">
+                    </div>
+                </section>
+                
+                <section class="main-section">
+                    <label>Select Tip %</label>
+                    <div class="btn-section">
+                        <button class="btn-tip">5%</button>
+                        <button class="btn-tip">10%</button>
+                        <button class="btn-tip">15%</button>
+                        <button class="btn-tip">25%</button>
+                        <button class="btn-tip">50%</button>
+                        <input type="number" id="custom" name="custom" placeholder="Custom"> 
+                    </div>
+                    </section>
+                
+                <section class="bottom-section">
+                    <label>Number of People</label>
+                    <div class="input-icon">
+                        <img src="assets/icon-person.svg" alt="" class="person">
+                        <input type="number" id="number-of-people" name="number-of-people" placeholder="0">
+                    </div>
+                    </section>
+            </div>
+            
+            <div class="right">
+                <section class="results-section">
+                    <div class="tip-amount">
+                        <div class="label-group">
+                            <h4>Tip Amount</h4>
+                            <p>/ person</p>
+                        </div>
+                        <div class="amount">$0.00</div>
+                    </div>
+                    
+                    <div class="total-amount">
+                        <div class="label-group">
+                            <h4>Total</h4>
+                            <p>/ person</p>
+                        </div>
+                        <div class="amount">$0.00</div>
+                    </div>
+                    
+                    <button class="btn-reset">Reset</button>
+                </section>
+            </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
